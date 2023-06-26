@@ -1,0 +1,34 @@
+<div class="space row">
+    <div class="nav col-9 mx-auto" >
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand" href="#">
+              Todo Manager
+            </a>
+            <button class="btn btn-success" (click)="onCreateClicked()">Add a New Todo</button>
+          </nav>
+    </div>
+
+    <div class="todos col-9 mx-auto mt-3">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Title</th>
+                <th scope="col">Description</th>
+                <th scope="col">Update</th>
+                <th scope="col">Delete</th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let todo of todos">
+              <tr>
+                <th scope="row">{{todo.id}}</th>
+                <td>{{todo.title}}</td>
+                <td>{{todo.description}}</td>
+                <td><button class="btn btn-warning" (click)="onUpdate(todo.id)">Update</button></td>
+                <td><button class="btn btn-danger" (click)="onDeleteClicked(todo.id)">Delete</button></td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+    
+</div>
